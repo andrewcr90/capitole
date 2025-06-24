@@ -1,7 +1,8 @@
-package com.capitole.shop.integration.useCase;
+package com.capitole.zara.integration.useCase;
 
-import com.capitole.shop.infraestructure.PriceEntity;
-import com.capitole.shop.persistence.PriceJpaRepository;
+import com.capitole.zara.infraestructure.BrandEntity;
+import com.capitole.zara.infraestructure.PriceEntity;
+import com.capitole.zara.persistence.PriceJpaRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ class PriceIntegrationMockMvcTest {
 
         // Precio con menor prioridad
         PriceEntity low = new PriceEntity();
-        low.setBrandId(1);
+        low.setBrand(BrandEntity.builder().id(1).build());
         low.setProductId(35455);
         low.setPriceList(1);
         low.setStartDate(LocalDateTime.parse("2020-06-14T00:00:00"));
@@ -44,7 +45,7 @@ class PriceIntegrationMockMvcTest {
 
         // Precio con mayor prioridad
         PriceEntity high = new PriceEntity();
-        high.setBrandId(1);
+        high.setBrand(BrandEntity.builder().id(1).build());
         high.setProductId(35455);
         high.setPriceList(2);
         high.setStartDate(LocalDateTime.parse("2020-06-14T00:00:00"));

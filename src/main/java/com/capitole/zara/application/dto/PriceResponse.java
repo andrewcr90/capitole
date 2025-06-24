@@ -1,4 +1,4 @@
-package com.capitole.shop.application.dto;
+package com.capitole.zara.application.dto;
 
 
 import lombok.AllArgsConstructor;

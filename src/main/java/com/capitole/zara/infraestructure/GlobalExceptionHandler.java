@@ -1,7 +1,7 @@
-package com.capitole.shop.infraestructure;
+package com.capitole.zara.infraestructure;
 
-import com.capitole.shop.domain.exception.PriceNotFoundException;
-import com.capitole.shop.shared.AppConstants;
+import com.capitole.zara.domain.exception.PriceNotFoundException;
+import com.capitole.zara.shared.AppConstants;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;

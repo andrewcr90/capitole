@@ -1,9 +1,9 @@
-package com.capitole.shop.adapter.in;
+package com.capitole.zara.adapter.in;
 
-import com.capitole.shop.application.GetApplicablePriceUseCase;
-import com.capitole.shop.application.dto.PriceResponse;
-import com.capitole.shop.domain.exception.PriceNotFoundException;
-import com.capitole.shop.shared.AppConstants;
+import com.capitole.zara.application.GetApplicablePriceUseCase;
+import com.capitole.zara.application.dto.PriceResponse;
+import com.capitole.zara.domain.exception.PriceNotFoundException;
+import com.capitole.zara.shared.AppConstants;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

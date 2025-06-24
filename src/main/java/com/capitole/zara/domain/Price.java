@@ -1,6 +1,5 @@
-package com.capitole.shop.domain;
+package com.capitole.zara.domain;
 
-import jakarta.persistence.Entity;
 import lombok.*;
 
 import java.math.BigDecimal;

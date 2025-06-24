@@ -1,8 +1,9 @@
-package com.capitole.shop.shared;
+package com.capitole.zara.shared;
 
-import com.capitole.shop.domain.Price;
-import com.capitole.shop.application.dto.PriceResponse;
-import com.capitole.shop.infraestructure.PriceEntity;
+import com.capitole.zara.domain.Price;
+import com.capitole.zara.application.dto.PriceResponse;
+import com.capitole.zara.infraestructure.BrandEntity;
+import com.capitole.zara.infraestructure.PriceEntity;
 
 public final class PriceMapper {
 
@@ -12,7 +13,7 @@ public final class PriceMapper {
         if (entity == null) return null;
 
         return Price.builder().id(entity.getId())
-        .brandId(entity.getBrandId())
+        .brandId(entity.getBrand().getId())
         .productId(entity.getProductId())
         .priceList(entity.getPriceList())
         .priority(entity.getPriority())
@@ -29,7 +30,7 @@ public final class PriceMapper {
     public static PriceEntity toEntity(Price price) {
         if (price == null) return null;
     return PriceEntity.builder().id(price.getId())
-        .brandId(price.getBrandId())
+        .brand(BrandEntity.builder().id(price.getBrandId()).build())
                 .productId(price.getProductId())
                 .priceList(price.getPriceList())
                 .priority(price.getPriority())

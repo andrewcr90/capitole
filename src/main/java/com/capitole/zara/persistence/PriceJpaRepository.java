@@ -1,6 +1,6 @@
-package com.capitole.shop.persistence;
+package com.capitole.zara.persistence;
 
-import com.capitole.shop.infraestructure.PriceEntity;
+import com.capitole.zara.infraestructure.PriceEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,12 +14,12 @@ import java.util.Optional;
 public interface PriceJpaRepository extends JpaRepository<PriceEntity, Long> {
 
     @Query("""
-        SELECT p FROM PriceEntity p
-        WHERE p.brandId = :brandId
-          AND p.productId = :productId
-          AND :applicationDate BETWEEN p.startDate AND p.endDate
-        ORDER BY p.priority DESC
-    """)
+    SELECT p FROM PriceEntity p
+    WHERE p.brand.id = :brandId
+      AND p.productId = :productId
+      AND :applicationDate BETWEEN p.startDate AND p.endDate
+    ORDER BY p.priority DESC
+""")
     List<PriceEntity> findAllMatchingPrices(@Param("brandId") Integer brandId,
                                             @Param("productId") Integer productId,
                                             @Param("applicationDate") LocalDateTime applicationDate);

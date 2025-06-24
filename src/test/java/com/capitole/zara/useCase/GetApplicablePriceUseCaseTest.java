@@ -1,9 +1,9 @@
-package com.capitole.shop.useCase;
+package com.capitole.zara.useCase;
 
-import com.capitole.shop.application.GetApplicablePriceUseCase;
-import com.capitole.shop.domain.Price;
-import com.capitole.shop.domain.PriceRepository;
-import com.capitole.shop.application.dto.PriceResponse;
+import com.capitole.zara.application.GetApplicablePriceUseCase;
+import com.capitole.zara.domain.Price;
+import com.capitole.zara.domain.PriceRepository;
+import com.capitole.zara.application.dto.PriceResponse;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

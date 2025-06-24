@@ -1,4 +1,4 @@
-package com.capitole.shop.domain;
+package com.capitole.zara.domain;
 
 import java.util.List;
 import java.util.Optional;

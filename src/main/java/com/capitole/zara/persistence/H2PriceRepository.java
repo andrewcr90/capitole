@@ -1,9 +1,9 @@
-package com.capitole.shop.persistence;
+package com.capitole.zara.persistence;
 
 
-import com.capitole.shop.domain.Price;
-import com.capitole.shop.domain.PriceRepository;
-import com.capitole.shop.shared.PriceMapper;
+import com.capitole.zara.domain.Price;
+import com.capitole.zara.domain.PriceRepository;
+import com.capitole.zara.shared.PriceMapper;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;

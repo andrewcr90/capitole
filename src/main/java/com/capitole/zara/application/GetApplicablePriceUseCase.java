@@ -1,11 +1,11 @@
-package com.capitole.shop.application;
+package com.capitole.zara.application;
 
-import com.capitole.shop.domain.Price;
-import com.capitole.shop.domain.PriceRepository;
-import com.capitole.shop.application.dto.PriceResponse;
-import com.capitole.shop.domain.exception.PriceNotFoundException;
-import com.capitole.shop.shared.AppConstants;
-import com.capitole.shop.shared.PriceMapper;
+import com.capitole.zara.domain.Price;
+import com.capitole.zara.domain.PriceRepository;
+import com.capitole.zara.application.dto.PriceResponse;
+import com.capitole.zara.domain.exception.PriceNotFoundException;
+import com.capitole.zara.shared.AppConstants;
+import com.capitole.zara.shared.PriceMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
