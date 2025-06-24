@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class GetApplicablePriceUseCase {
-    @Autowired
+
     private final PriceRepository repo;
 
     public GetApplicablePriceUseCase(PriceRepository repo) {
@@ -27,7 +27,8 @@ public class GetApplicablePriceUseCase {
 
     public List<PriceResponse> getPrice(Integer brandId, Integer productId, LocalDateTime applicationDate) {
         List<Price> prices =  repo.findAllApplicablePrices(brandId, productId, applicationDate);
-        log.info("GetPirce UseCase" + prices.stream().findFirst());
+        log.debug("Found prices: {}", prices);
+
         return prices.stream()
                 .map(PriceMapper::toDTO)
                 .collect(Collectors.toList());
