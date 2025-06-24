@@ -1,4 +1,4 @@
-package com.capitole.shop;
+package com.capitole.zara;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

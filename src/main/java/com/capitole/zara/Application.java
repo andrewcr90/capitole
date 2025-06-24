@@ -1,4 +1,4 @@
-package com.capitole.shop;
+package com.capitole.zara;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
