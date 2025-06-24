@@ -3,6 +3,7 @@ package com.capitole.shop.useCase;
 import com.capitole.shop.application.GetApplicablePriceUseCase;
 import com.capitole.shop.domain.Price;
 import com.capitole.shop.domain.PriceRepository;
+import com.capitole.shop.application.dto.PriceResponse;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,20 +28,24 @@ public class GetApplicablePriceUseCaseTest  {
     private final Integer brandId = 1;
     private final Integer productId = 35455;
 
+
     @Test
     void test1_at10AM_day14() {
         LocalDateTime applicationDate = LocalDateTime.of(2020, 6, 14, 10, 0, 0);
 
         Price expected = new Price(1L, 1, applicationDate.minusHours(1),applicationDate.plusHours(2),
                 35455, 1, 0, new BigDecimal("35.50"), "EUR");
+        PriceResponse expectedReponse = new PriceResponse(1, 1,
+                35455, applicationDate.minusHours(1), applicationDate.plusHours(2), new BigDecimal("35.50"));
 
         Mockito.when(priceRepository.findFirstApplicablePrice(brandId, productId, applicationDate))
                 .thenReturn(Optional.of(expected));
 
-        Optional<Price> result = useCase.getFirstPrice(brandId, productId, applicationDate);
+        Optional<PriceResponse> result = useCase.getFirstPrice(brandId, productId, applicationDate);
         Assertions.assertTrue(result.isPresent());
-        Assertions.assertEquals(expected, result.get());
+        Assertions.assertEquals(expectedReponse, result.get());
     }
+
 
     @Test
     void test2_at16PM_day14() {
@@ -56,7 +61,7 @@ public class GetApplicablePriceUseCaseTest  {
         Mockito.when(priceRepository.findAllApplicablePrices(brandId, productId, applicationDate))
                 .thenReturn(expectedList);
 
-        List<Price> result = useCase.getPrice(brandId, productId, applicationDate);
+        List<PriceResponse> result = useCase.getPrice(brandId, productId, applicationDate);
         Assertions.assertEquals(2, result.size());
     }
 
@@ -70,7 +75,7 @@ public class GetApplicablePriceUseCaseTest  {
         Mockito.when(priceRepository.findFirstApplicablePrice(brandId, productId, applicationDate))
                 .thenReturn(Optional.of(expected));
 
-        Optional<Price> result = useCase.getFirstPrice(brandId, productId, applicationDate);
+        Optional<PriceResponse> result = useCase.getFirstPrice(brandId, productId, applicationDate);
         Assertions.assertTrue(result.isPresent());
         Assertions.assertEquals(expected.getPrice(), result.get().getPrice());
     }
@@ -84,7 +89,7 @@ public class GetApplicablePriceUseCaseTest  {
         Mockito.when(priceRepository.findFirstApplicablePrice(brandId, productId, applicationDate))
                 .thenReturn(Optional.of(expected));
 
-        Optional<Price> result = useCase.getFirstPrice(brandId, productId, applicationDate);
+        Optional<PriceResponse> result = useCase.getFirstPrice(brandId, productId, applicationDate);
         Assertions.assertTrue(result.isPresent());
     }
 
@@ -97,7 +102,7 @@ public class GetApplicablePriceUseCaseTest  {
         Mockito.when(priceRepository.findFirstApplicablePrice(brandId, productId, applicationDate))
                 .thenReturn(Optional.of(expected));
 
-        Optional<Price> result = useCase.getFirstPrice(brandId, productId, applicationDate);
+        Optional<PriceResponse> result = useCase.getFirstPrice(brandId, productId, applicationDate);
         Assertions.assertTrue(result.isPresent());
         Assertions.assertEquals(35455, result.get().getProductId());
     }

@@ -1,6 +1,7 @@
 package com.capitole.shop.shared;
 
 import com.capitole.shop.domain.Price;
+import com.capitole.shop.application.dto.PriceResponse;
 import com.capitole.shop.infraestructure.PriceEntity;
 
 public final class PriceMapper {
@@ -23,6 +24,8 @@ public final class PriceMapper {
 
     }
 
+
+
     public static PriceEntity toEntity(Price price) {
         if (price == null) return null;
     return PriceEntity.builder().id(price.getId())
@@ -37,4 +40,15 @@ public final class PriceMapper {
                 .build();
 
     }
+
+        public static PriceResponse toDTO(Price price) {
+            return PriceResponse.builder().brandId(price.getBrandId())
+                .productId(price.getProductId())
+                .priceList(price.getPriceList())
+                .price(price.getPrice())
+                .startDate(price.getStartDate())
+                .endDate(price.getEndDate())
+                .build();
+        }
+
 }

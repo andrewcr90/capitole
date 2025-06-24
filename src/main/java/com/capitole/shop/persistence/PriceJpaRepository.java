@@ -23,4 +23,13 @@ public interface PriceJpaRepository extends JpaRepository<PriceEntity, Long> {
     List<PriceEntity> findAllMatchingPrices(@Param("brandId") Integer brandId,
                                             @Param("productId") Integer productId,
                                             @Param("applicationDate") LocalDateTime applicationDate);
+
+
+    Optional<PriceEntity> findFirstByProductIdAndBrandIdAndStartDateLessThanEqualAndEndDateGreaterThanEqualOrderByPriorityDesc(
+            Integer productId,
+            Integer brandId,
+            LocalDateTime date1,
+            LocalDateTime date2
+    );
+
 }

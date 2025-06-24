@@ -18,5 +18,4 @@ public interface PriceRepository {
 
     Optional<Price> findFirstApplicablePrice(Integer brandId, Integer productId, LocalDateTime applicationDate);
 
-
 }
